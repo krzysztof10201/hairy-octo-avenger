@@ -1,0 +1,88 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
+\usepackage{polski}
+
+\usepackage[hidelinks]{hyperref}
+\usepackage{graphicx}
+
+\linespread{1.2}
+
+\begin{document}
+
+\tableofcontents
+
+\vspace{0.5cm}
+\hrule
+
+\section{Metody porównywania wyników}
+
+Potrzebne są metody, które pozwolą porównać dane rzeczywiste z modelowymi i stwierdzić, w jakim stopniu są do siebie podobne.
+
+\begin{itemize}
+    \item Podział obszaru symulacji na podobszary i zliczanie agentów na każdym z nich. Następnie porównywanie wyników różnych symulacji na danym podobszarze. Może istnieje także sposób na uwzględnienie sąsiadów, lub inny sposób zwiększenia elastyczności porównania.
+
+    \item Porównywanie wartości liczbowych (średnia, minimum, maksimum, etc.), które mówią o rozmaitych parametrach ruchu, np.:
+    \begin{itemize}
+        \item szybkość,
+        \item przyspieszenie,
+        \item zmiana kierunku,
+        \item przestój,
+        \item droga.
+    \end{itemize}
+
+    \item Zasięg sieci bezprzewodowej, czyli w uproszczeniu może to być np. odległość od wyznaczonych z góry punktów. Bardziej wymyślne sposoby dokonywania pomiarów prawdopodobnie zaczną nachodzić na zagadnienie przydziału stacji bazowych.
+
+    \item Preferencje odwiedzania pewnych obszarów, częstotliwość powrotu do wcześniej odwiedzonych lokacji.
+
+    \item Częstotliwość spotkań z innymi agentami (lub jakieś inne interakcje agentów?).
+
+    \item Wykresy trajektorii.
+\end{itemize}
+
+\pagebreak
+
+\section{Modele mobilności}
+
+\subsection{Modele bez ograniczeń geograficznych}
+
+\begin{enumerate}
+    \item Modele losowe
+    \begin{itemize}
+        \item random walk
+        \item \textbf{random waypoint}
+        \item random direction model (?)
+    \end{itemize}
+    \item Modele z zależnościami czasowymi
+    \begin{itemize}
+        \item \textbf{Gauss-Markov}, który przy odpowiednim doborze parametrów sprowadza się także do innych modeli:
+        \begin{itemize}
+            \item random walk
+            \item fluid flow
+        \end{itemize}
+        \item smooth random
+    \end{itemize}
+    \item Modele z zależnościami przestrzennymi
+    \begin{itemize}
+        \item \textbf{reference point group}
+        \item column (chyba trochę nudny)
+        \item pursue
+        \item nomadic community
+    \end{itemize}
+\end{enumerate}
+
+\subsection{Modele z ograniczeniami geograficznymi}
+
+\begin{itemize}
+    \item \textbf{pathway} (można łatwo połączyć z modelami bez ograniczeń geograficznych, można też uznać ścieżki za zaledwie wskazówki dotyczące poruszania się)
+    \item obstacle (jeśli uznać przeszkody za ograniczenia twarde, to może być problem z porównywaniem do innych modeli; można też próbować zamienić przeszkody na ograniczenia miękkie, np. poprzez spowolnienie ruchu pokonujących je agentów)
+\end{itemize}
+
+\section{Projekt aplikacji}
+
+\subsection{Diagram klas}
+
+\includegraphics[width=\linewidth]{class.pdf}
+
+\end{document}
